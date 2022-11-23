@@ -1,9 +1,9 @@
 class CheesesController < ApplicationController
 
   # GET /cheeses
-  def index
-    cheeses = Cheese.all
-    render json: cheeses
+  def index 
+    cheeses = Cheese.all 
+    render json: cheeses, except: [:created_at,:updated_at] , methods: [:summary]
   end
   
   # Get /cheeses/:id
